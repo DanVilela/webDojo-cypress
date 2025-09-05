@@ -32,4 +32,11 @@ Cypress.Commands.add("openBrowser", () => {
 Cypress.Commands.add("submitLogin", (email, password) => {
   cy.get("#email").type(email);
   cy.get("#password").type(password);
+  cy.contains('button', 'Entrar').click()
 });
+
+Cypress.Commands.add("start", (email, password) => {
+  cy.get("#email").type(email);
+  cy.get("#password").type(password);
+});
+
