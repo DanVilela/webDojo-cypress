@@ -48,5 +48,23 @@ describe('Consulting Form', () => {
 
     cy.get('textarea[placeholder="Descreva mais detalhes sobre sua necessidade"]')
     .type('Exemple text to writing in field textarea and lorem ipsum dolor sit amet')
+
+    const frameworksAutomation = [
+      'Cypress',
+      'Robot',
+      'Selenium',
+      'Playwright'
+    ]
+
+    frameworksAutomation.forEach ((frame) => {
+      cy.get('input[placeholder="Digite uma tecnologia e pressione Enter"]')
+      .type(frame)
+      .type('{enter}')
+
+      cy.contains('label', 'Tecnologias')
+      .parent()
+      .contains('span', frame)
+      .should('be.visible')
+    })
   })
 })
