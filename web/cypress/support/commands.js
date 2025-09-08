@@ -24,19 +24,24 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("openBrowser", () => {
-  cy.viewport(1440, 900);
-  cy.visit("http://localhost:3000");
+Cypress.Commands.add('openBrowser', () => {
+  cy.viewport(1440, 900)
+  cy.visit('http://localhost:3000')
 });
 
-Cypress.Commands.add("submitLogin", (email, password) => {
-  cy.get("#email").type(email);
-  cy.get("#password").type(password);
+Cypress.Commands.add('submitLogin', (email, password) => {
+  cy.get('#email').type(email)
+  cy.get('#password').type(password)
   cy.contains('button', 'Entrar').click()
 });
 
-Cypress.Commands.add("start", (email, password) => {
-  cy.get("#email").type(email);
-  cy.get("#password").type(password);
+Cypress.Commands.add('start', (email, password) => {
+  cy.get('#email').type(email)
+  cy.get('#password').type(password)
 });
 
+Cypress.Commands.add('goToSteps', (buttonName, pageTitle) => {
+  cy.contains('button', buttonName).should('be.visible').click();
+
+  cy.contains('h1', pageTitle).should('be.visible')
+});
