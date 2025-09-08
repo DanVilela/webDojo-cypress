@@ -14,5 +14,14 @@ describe('Consulting Form', () => {
     .should('have.value','(21) 99999-9999')
 
     cy.get('#consultancyType').select('Individual')
+
+    cy.contains('label', 'Pessoa Física')
+    .find('input')
+    .check()
+    .should('be.checked')
+
+    cy.contains('label', 'Pessoa Jurídica')
+    .find('input')
+    .should('be.not.checked')
   })
 })
