@@ -66,5 +66,15 @@ describe('Consulting Form', () => {
       .contains('span', frame)
       .should('be.visible')
     })
+
+    cy.contains('label', 'termos de uso')
+    .find('input')
+    .check()
+
+    cy.contains('button', 'Enviar formulário')
+    .click()
+
+    cy.contains('Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido.')
+    .should('be.visible')
   })
 })
