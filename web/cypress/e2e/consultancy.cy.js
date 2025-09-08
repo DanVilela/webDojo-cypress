@@ -12,5 +12,7 @@ describe('Consulting Form', () => {
     cy.get('input[placeholder="(00) 00000-0000"]')
     .type('21 99999-9999')
     .should('have.value','(21) 99999-9999')
+
+    cy.get('#consultancyType').select('Individual')
   })
 })
