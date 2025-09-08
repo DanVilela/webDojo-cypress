@@ -32,7 +32,7 @@ describe('Consulting Form', () => {
       'Instagram',
       'LinkedIn',
       'Udemy',
-      'Youtube',
+      'YouTube',
       'Indicação de Amigo',
     ]
 
@@ -42,5 +42,8 @@ describe('Consulting Form', () => {
       .check()
       .should('be.checked')
     })
+
+    cy.get('input[type="file"]')
+    .selectFile('./cypress/fixtures/example_img_upload_cypress.pdf', { force: true})
   })
 })
