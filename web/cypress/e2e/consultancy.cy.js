@@ -45,5 +45,8 @@ describe('Consulting Form', () => {
 
     cy.get('input[type="file"]')
     .selectFile('./cypress/fixtures/example_img_upload_cypress.pdf', { force: true})
+
+    cy.get('textarea[placeholder="Descreva mais detalhes sobre sua necessidade"]')
+    .type('Exemple text to writing in field textarea and lorem ipsum dolor sit amet')
   })
 })
